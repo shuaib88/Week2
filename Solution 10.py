@@ -32,7 +32,8 @@ def multiLegOdom():
         moredata = input("do you have more data? ")
     for i in range(0, len(distanceList)):
         efficiencyList.append(distanceList[i] / gasUsedList[i])
-    print(efficiencyList)
+    for j in range(1, 1+len(efficiencyList)):
+        print("Leg", j, "had", efficiencyList[j-1], "mpg")
 
 multiLegOdom()
 
