@@ -27,3 +27,7 @@ def fibonnaci():
         print(current_fib)
     
 fibonnaci()
+
+
+#serendipitously a friend posted this fibonnaci inspired art to my facebook wall!!!
+#http://bit.ly/1y7xfTW
