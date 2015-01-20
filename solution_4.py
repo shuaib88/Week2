@@ -31,3 +31,5 @@ def syracuseSeq():
 
 syracuseSeq()
 
+##I'm a bit confused why the list is printing as floats.
+##I thought if divide int by int you get int
