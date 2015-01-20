@@ -19,19 +19,20 @@
 
 
 def multiLegOdom():
-    initialOdom = eval(input("what is your initial odometer reading >> "))
+    prevOdom = eval(input("what is your initial odometer reading >> "))
     count = 0
     moredata = "yes"
-    distanceList = []
+    currentOdom = []
     gasUsedList = []
     efficiencyList = []
     while moredata[0] == "y":
-        tempDist, tempUsed = eval(input("What is your distance travelled and gas used(seperated by comma) >> "))
-        distanceList.append(tempDist)
+        tempDist, tempUsed = eval(input("What is your current odometer reading and gas used for this trip(seperated by comma) >> "))
+        currentOdom.append(tempDist)
         gasUsedList.append(tempUsed)
         moredata = input("do you have more data? ")
-    for i in range(0, len(distanceList)):
-        efficiencyList.append(distanceList[i] / gasUsedList[i])
+    for i in range(0, len(currentOdom)):
+        efficiencyList.append((currentOdom[i]-prevOdom) / gasUsedList[i])
+        prevOdom = currentOdom[i]
     for j in range(1, 1+len(efficiencyList)):
         print("Leg", j, "had", efficiencyList[j-1], "mpg")
 
