@@ -18,25 +18,23 @@
 
 
 
-##def multiLegOdom():
-##    initialOdom = eval(input("what is your initial odometer reading >> "))
-##    count = 0
-##    moredata = "yes"
-##    distanceList = []
-##    gasUsedList = []
-##    efficiencyList = []
-##    while moredata[0] == "y":
-##        tempDist, tempUsed = eval(input("What is your distance travelled and gas used(seperated by comma) >> "))
-##        distanceList.append(tempDist)
-##        gasUsedList.append(tempUsed)
-##        moredata = input("do you have more data? ")
-##        print(distanceList)
-##    for i in distanceList and j in gasUsedList:
-##        tempEffic = i/j
-##        efficiencyList.append(tempEffic)
-##        print(efficiencyList)
-##
-##multiLegOdom()
+def multiLegOdom():
+    initialOdom = eval(input("what is your initial odometer reading >> "))
+    count = 0
+    moredata = "yes"
+    distanceList = []
+    gasUsedList = []
+    efficiencyList = []
+    while moredata[0] == "y":
+        tempDist, tempUsed = eval(input("What is your distance travelled and gas used(seperated by comma) >> "))
+        distanceList.append(tempDist)
+        gasUsedList.append(tempUsed)
+        moredata = input("do you have more data? ")
+    for i in range(0, len(distanceList)):
+        efficiencyList.append(distanceList[i] / gasUsedList[i])
+    print(efficiencyList)
+
+multiLegOdom()
 
 ##def main():
 ##    sum = 0.0
@@ -48,5 +46,5 @@
 ##        count = count + 1
 ##        moredata = input("do you have more numbers (yes or no)?")
 ##    print("\nThe average of the numbers is", sum / count)
-##
+
 ##main()
